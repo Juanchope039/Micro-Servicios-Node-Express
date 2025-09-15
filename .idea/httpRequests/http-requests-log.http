@@ -1,9 +1,0 @@
-GET http://localhost:3000
-User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2025-09-13T165326.200.txt
-
-###
-

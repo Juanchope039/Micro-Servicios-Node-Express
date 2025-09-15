@@ -1,19 +1,16 @@
 const { response, request } = require('express')
-const { Heroes } = require('../models/mySqlHeroes.model');
-const { bdmysqlNube,bdmysql } = require('../repositories/mySqlConnection');
+const { Heroe } = require('../repositories/Heroe.repository');
+const { connection } = require('../models/ConnectionLocal');
+const {Op} = require("sequelize");
 
-//SELECT * FROM heroes
-const heroesGet = async (req, res = response) => {
-
+//SELECT * FROM heroe
+const heroeGet = async (req, res = response) => {
     try {
-        const unosHeroes = await Heroes.findAll();
-
+        const unosHeroe = await Heroe.findAll();
         res.json({
             ok: true,
-            data: unosHeroes
+            data: unosHeroe
         });
-
-
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -21,32 +18,24 @@ const heroesGet = async (req, res = response) => {
             msg: 'Hable con el Administrador',
             err: error
         })
-
     }
 }
 
 
 const heroeIdGet = async (req, res = response) => {
-
     const { id } = req.params;
-
     try {
-
-        const unHeroe = await Heroes.findByPk(id);
-
+        const unHeroe = await Heroe.findByPk(id);
         if (!unHeroe) {
             return res.status(404).json({
                 ok: false,
                 msg: 'No existe un heroe con el id: ' + id
             })
         }
-
         res.json({
             ok: true,
             data: unHeroe
         });
-
-
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -54,48 +43,21 @@ const heroeIdGet = async (req, res = response) => {
             msg: 'Hable con el Administrador',
             err: error
         })
-
-
     }
-
-
-    /*
-    const query = req.query;
-
-
-    //Desestructuracion de argumentos
-    const { q, nombre = 'No name', apikey, page=1, limit=10} = req.query;
-
-
-    //res.send('Hello World')
-    res.json({
-        //ok:true,
-        msg:'get API - Controller',
-        query,
-        q,
-        nombre,
-        apikey,
-        page,
-        limit
-       })
-
-
-      */
 }
 
 
-const heroesComoGet = async(req = request, res = response) => {
-
+const heroeComoGet = async (req = request, res = response) => {
     const { termino } = req.params;
-
     try {
-        const [results, metadata] = await bdmysql.query(
-            "SELECT nombre,bio" +
-            " FROM heroes" +
-            " WHERE nombre LIKE '%" + termino + "%'" +
-            " ORDER BY nombre"
-        );
-
+        const [results, metadata] = await Heroe.findAll({
+            attributes: ['nombre', 'bio'],
+            where: {
+                nombre: {
+                    [Op.like]: `%${termino}%`,
+                },
+            },
+        });
         res.json({ok:true,
             data: results,
         });
@@ -104,30 +66,30 @@ const heroesComoGet = async(req = request, res = response) => {
         res.status(500).json({ok:false,
             msg: 'Hable con el Administrador',
             err: error
-
         });
     }
 };
 
 
-const heroesPost = async (req, res = response) => {
+const heroePost = async (req, res = response) => {
+    const { nombre, bio, img, aparicion, casa} = req.body;
+    const heroe = new Heroe({
+        nombre, bio, img, aparicion, casa
+    });
 
-    const { nombre, bio, img, aparicion , casa,id} = req.body;
-
-    const heroe = new Heroes({ nombre, bio,img, aparicion, casa });
-
-
+    let newHeroe;
     try {
-
-        const existeHeroe = await Heroes.findOne({ where: { nombre: nombre} });
-
+        await Heroe.sync();
+        const existeHeroe = await Heroe.findOne({
+            where: { nombre: nombre }
+        });
 
         if (existeHeroe) {
-            return res.status(400).json({ok:false,
+            return res.status(400).json({
+                ok: false,
                 msg: 'Ya existe un Heroe llamado: ' + nombre
             })
         }
-
 
         // Guardar en BD
         newHeroe = await heroe.save();
@@ -136,31 +98,27 @@ const heroesPost = async (req, res = response) => {
         //Ajusta el Id del nuevo registro al Heroe
         heroe.id = newHeroe.null;
 
-
-        res.json({ok:true,
-            msg:'Heroe INSERTADO',
-            data:heroe
+        res.status(201).json({
+            ok: true,
+            msg: 'Heroe INSERTADO',
+            data: heroe
         });
-
-
     } catch (error) {
         console.log(error);
-        res.status(500).json({ok:false,
+        res.status(500).json({
+            ok: false,
             msg: 'Hable con el Administrador',
             err: error
         })
 
     }
-
-
-
 }
 
 
 module.exports = {
-    heroesGet,
+    heroeGet,
     heroeIdGet,
-    heroesComoGet,
-    heroesPost
+    heroeComoGet,
+    heroePost
 
 }

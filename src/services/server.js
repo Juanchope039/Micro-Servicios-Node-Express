@@ -1,62 +1,51 @@
 const express = require('express')
 const cors = require('cors')
-
-
-const { bdmysql,bdmysqlNube } = require('../repositories/mySqlConnection');
+const { connection } = require('../models/ConnectionLocal');
 
 class Server {
-
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
 
-        
         this.pathsMySql = {
             auth: '/api/auth',
             prueba: '/api/prueba',
             heroes: '/api/heroes',
             multimedias: '/api/multimedias',
         }
-            
-       
+
         this.app.get('/', function (req, res) {
             res.send('Hola Mundo a todos desde la Clase...')
         })
        
         //Aqui me conecto a la BD
-        this.dbConnection();
+        this.dbConnection().then(r => {
 
+            //Middlewares
+            this.middlewares();
 
-        //Middlewares
-        this.middlewares();
+            //Routes
+            this.routes();
 
-        //Routes
-        this.routes();
+        });
 
     }
 
-
- 
     async dbConnection() {
         try {
-            await bdmysqlNube.authenticate();
+            await connection.authenticate();
             console.log('Connection OK a MySQL.');
         } catch (error) {
             console.error('No se pudo Conectar a la BD MySQL', error);
         }
     }
-    
-    
+
     routes() {
         //this.app.use(this.pathsMySql.auth, require('../routes/MySqlAuth'));
         //this.app.use(this.pathsMySql.prueba, require('../routes/prueba'));
-
-        this.app.use(this.pathsMySql.heroes, require('../routes/heroes.route'));
-
+        this.app.use(this.pathsMySql.heroes, require('../routes/heroe.route'));
     }
-    
 
-    
     middlewares() {
         //CORS
         //Evitar errores por Cors Domain Access
@@ -75,19 +64,15 @@ class Server {
        
         this.app.use(express.json());
 
-        //Directorio publico
+        //Directorio público
         this.app.use(express.static('public'));
-
     }
-    
 
     listen() {
         this.app.listen(this.port, () => {
             console.log('Servidor corriendo en puerto', this.port);
         });
     }
-
-
 }
 
 module.exports = Server;

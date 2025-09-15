@@ -1,26 +1,26 @@
 const { Router } = require('express');
 
-const { heroesGet,
+const { heroeGet,
         heroeIdGet,
-        heroesComoGet,
-        heroesPost
+        heroeComoGet,
+        heroePost
     //pruebaPost,
     //pruebaPut,
     //pruebaDelete,
     //pruebaPatch
-} = require('../controllers/heroes.controller');
+} = require('../controllers/heroe.controller');
 
 
 const router = Router();
 
-router.get('/', heroesGet);
+router.get('/', heroeGet);
 
 router.get('/:id', heroeIdGet);
 
-router.get('/como/:termino', heroesComoGet);
+router.get('/como/:termino', heroeComoGet);
 
 //INSERT
-router.post('/', heroesPost);
+router.post('/', heroePost);
 
 
 //router.put('/:id', usuariosPut);

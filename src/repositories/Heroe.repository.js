@@ -1,24 +1,20 @@
 const { DataTypes } = require('sequelize');
-const { bdmysqlNube,bdmysql } = require('../repositories/mySqlConnection');
+const { connection } = require('../models/ConnectionLocal');
 
 
-const Heroes = bdmysql.define('heroes',
+const Heroe = connection.define('heroes',
     {
-        // Model attributes are defined here
         'id': {
             type: DataTypes.INTEGER,
-            //allowNull: false,
-            primaryKey: true
+            allowNull: true,
+            primaryKey: true,
+            autoIncrement: true,
         },
-
-
         'nombre': {
             type: DataTypes.STRING,
             allowNull: false
             // allowNull defaults to true
         },
-
-
         'bio': {
             type: DataTypes.TEXT,
             allowNull: false
@@ -37,11 +33,7 @@ const Heroes = bdmysql.define('heroes',
             type: DataTypes.STRING
             // allowNull defaults to true
         },
-
-
     },
-
-
     {
         //Maintain table name don't plurilize
         freezeTableName: true,
@@ -56,7 +48,4 @@ const Heroes = bdmysql.define('heroes',
     }
 );
 
-
-module.exports = {
-    Heroes,
-}
+module.exports = { Heroe }
