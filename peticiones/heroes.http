@@ -1,3 +1,16 @@
+### heroes post
+POST localhost:8081/api/heroes/
+Content-Type: application/json
+
+{
+  "nombre" : "Lina Marcela ",
+  "bio" : "mi hermosa novia",
+  "img" : "la ms bonita",
+  "aparicion" : "02/05/1993",
+  "casa" : "De su casa"
+}
+
+### root
 GET localhost:8081
 
 ### Prueba
@@ -18,14 +31,3 @@ GET localhost:8081/api/heroes/1
 ### heroes como -> nombre
 GET localhost:8081/api/heroes/como/nom
 
-### heroes post
-POST localhost:8081/api/heroes/
-Content-Type: application/json
-
-{
-    "nombre" : "juan",
-    "bio" : "bio",
-    "img" : "img",
-    "aparicion" : "02/07/1999",
-    "casa" : "casa"
-}

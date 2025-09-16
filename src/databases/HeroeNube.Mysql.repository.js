@@ -1,4 +1,5 @@
 const { Sequelize } = require('sequelize');
+const HeroeSchema = require("../schemas/Heroe.Schema");
 const connection = new Sequelize(
     'myDb',
     'mydb',
@@ -10,5 +11,9 @@ const connection = new Sequelize(
     }
 );
 
-module.exports = { connection }
+const models = {
+    Heroe:  HeroeSchema(connection),
+}
+
+module.exports = { connection, ...models }
 

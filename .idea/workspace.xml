@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="157e680b-94b2-4634-b4d9-381130af0fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/peticiones/heroes.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repositories/mysql/ConnectionLocal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repositories/mysql/ConnectionNube.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-09-13T165326.200.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticione/root.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peticiones/heroes.http" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/heroes.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/heroes.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/heroe.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/mySqlHeroes.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/Heroe.repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/mySqlConnection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/heroes.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/heroe.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/heroe.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/heroe.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ConnectionLocal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/HeroeLocal.Mysql.database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ConnectionNube.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/HeroeNube.Mysql.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/Heroe.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/Heroe.Schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +41,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -77,8 +67,11 @@
     "HTTP Request.heroes | #2.executor": "Run",
     "HTTP Request.heroes | #3.executor": "Run",
     "HTTP Request.heroes | #4.executor": "Run",
+    "HTTP Request.heroes | heroes -> id.executor": "Run",
     "HTTP Request.heroes | heroes como -> nombre.executor": "Run",
     "HTTP Request.heroes | heroes post.executor": "Run",
+    "HTTP Request.heroes | heroes.executor": "Run",
+    "HTTP Request.heroes | root.executor": "Run",
     "HTTP Request.root | #1.executor": "Run",
     "HTTP Request.root | #5.executor": "Run",
     "HTTP Request.root | #6.executor": "Run",
@@ -104,7 +97,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "C:/Program Files/nodejs/node",
     "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
+    "npm.dev.executor": "Debug",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -123,11 +116,11 @@
       <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src\services" />
-      <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src\config" />
-      <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src" />
       <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express" />
+      <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src\models\inbound" />
       <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src\repositories" />
+      <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src\models" />
+      <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src\services" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -136,6 +129,9 @@
         <entry key="HttpClient.HttpRequestRunConfigurationType">
           <value>
             <map>
+              <entry key="All in heroes" value="STOPPED" />
+              <entry key="heroes | heroes" value="STOPPED" />
+              <entry key="heroes | heroes -&gt; id" value="STOPPED" />
               <entry key="heroes | heroes como -&gt; nombre" value="STOPPED" />
               <entry key="heroes | heroes post" value="STOPPED" />
             </map>
@@ -178,35 +174,28 @@
     <configuration name="All in heroes" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/peticiones/heroes.http">
       <method v="2" />
     </configuration>
-    <configuration name="All in root" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/peticiones/root.http">
+    <configuration name="heroes | heroes -&gt; id" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.http" executionIdentifier="heroes -&gt; id" index="7" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="heroes | heroes como -&gt; nombre" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.http" executionIdentifier="heroes como -&gt; nombre" index="7" runType="Run single request">
+    <configuration name="heroes | heroes como -&gt; nombre" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.http" executionIdentifier="heroes como -&gt; nombre" index="8" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="heroes | heroes post" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.http" executionIdentifier="heroes post" index="8" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="app.js" type="NodeJSConfigurationType" path-to-node="node" nameIsGenerated="true" path-to-js-file="src/app.js" working-dir="$PROJECT_DIR$">
+    <configuration name="heroes | heroes" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.http" executionIdentifier="heroes" index="5" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+    <configuration name="app.js" type="NodeJSConfigurationType" path-to-node="node" nameIsGenerated="true" path-to-js-file="src/app.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
-        <item itemvalue="HTTP Request.heroes | heroes como -&gt; nombre" />
         <item itemvalue="HTTP Request.heroes | heroes post" />
+        <item itemvalue="HTTP Request.heroes | heroes -&gt; id" />
+        <item itemvalue="HTTP Request.heroes | heroes como -&gt; nombre" />
+        <item itemvalue="HTTP Request.heroes | heroes" />
         <item itemvalue="HTTP Request.All in heroes" />
-        <item itemvalue="HTTP Request.All in root" />
       </list>
     </recent_temporary>
   </component>
@@ -227,6 +216,9 @@
       <workItem from="1757796787133" duration="61000" />
       <workItem from="1757859790766" duration="5499000" />
       <workItem from="1757883922655" duration="11880000" />
+      <workItem from="1757911360996" duration="2608000" />
+      <workItem from="1757984020026" duration="4253000" />
+      <workItem from="1758043141062" duration="8145000" />
     </task>
     <servers />
   </component>
@@ -243,29 +235,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/controllers/heroe.controller.js</url>
-          <line>88</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/controllers/heroe.controller.js</url>
-          <line>100</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/controllers/heroe.controller.js</url>
-          <line>102</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

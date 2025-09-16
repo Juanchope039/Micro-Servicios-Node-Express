@@ -1,4 +1,4 @@
-require('dotenv').config({path: './src/config/.env'});
+require('dotenv').config({path: './.env'});
 
 const Server = require('./services/server');
 const server = new Server();

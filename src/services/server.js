@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const { connection } = require('../models/ConnectionLocal');
+const { connection } = require('../databases/HeroeLocal.Mysql.database');
 
 class Server {
     constructor() {
@@ -10,24 +10,22 @@ class Server {
         this.pathsMySql = {
             auth: '/api/auth',
             prueba: '/api/prueba',
-            heroes: '/api/heroes',
-            multimedias: '/api/multimedias',
+            heroe: '/api/heroes',
+            multimedia: '/api/multimedias',
         }
 
         this.app.get('/', function (req, res) {
             res.send('Hola Mundo a todos desde la Clase...')
         })
        
-        //Aqui me conecto a la BD
-        this.dbConnection().then(r => {
+        //Aquí me conecto a la BD
+        this.dbConnection();
 
-            //Middlewares
-            this.middlewares();
+        //Middlewares
+        this.middlewares();
 
-            //Routes
-            this.routes();
-
-        });
+        //Routes
+        this.routes();
 
     }
 
@@ -43,7 +41,7 @@ class Server {
     routes() {
         //this.app.use(this.pathsMySql.auth, require('../routes/MySqlAuth'));
         //this.app.use(this.pathsMySql.prueba, require('../routes/prueba'));
-        this.app.use(this.pathsMySql.heroes, require('../routes/heroe.route'));
+        this.app.use(this.pathsMySql.heroe, require('../routes/heroe.route'));
     }
 
     middlewares() {
