@@ -1,6 +1,8 @@
 /docs/
+/peticiones/
+
+/.idea/httpRequests/
 /node_modules/
 /package-lock.json
 
 .env
-httpRequests

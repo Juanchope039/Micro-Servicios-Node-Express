@@ -5,8 +5,8 @@ const connection = new Sequelize(
     process.env.BD_DATA_BASE,
     process.env.BD_USER_NAME,
     process.env.BD_PASS , {
-        host: 'localhost',
-        port: '3306',
+        host: process.env.BD_HOST,
+        port:  process.env.BD_PORT,
         dialect: 'mysql'
     }
 );

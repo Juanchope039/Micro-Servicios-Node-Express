@@ -66,8 +66,8 @@ class Server {
         this.app.use(express.static('public'));
     }
 
-    listen() {
-        this.app.listen(this.port, () => {
+    async listen() {
+        await this.app.listen(this.port, () => {
             console.log('Servidor corriendo en puerto', this.port);
         });
     }
