@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="157e680b-94b2-4634-b4d9-381130af0fa5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ .dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/ .dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/heroe.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/heroe.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/databases/HeroeLocal.Mysql.database.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/Local.Mysql.database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/databases/HeroeNube.Mysql.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/Nube.Mysql.repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/errors/controllers.errors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/Heroe.Schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/Heroe.Schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +89,8 @@
     "HTTP Request.root | multimedias.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Node.js.app.js.executor": "Run",
+    "Node.js.heroe.route.js.executor": "Run",
+    "Node.js.pdf.js.executor": "Run",
     "Node.js.test.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -148,7 +141,6 @@
         <entry key="HttpClient.HttpRequestRunConfigurationType">
           <value>
             <map>
-              <entry key="All in heroes" value="STOPPED" />
               <entry key="All in heroes.docker" value="STOPPED" />
               <entry key="heroes.docker | heroes post" value="STOPPED" />
             </map>
@@ -157,7 +149,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.test.js">
+  <component name="RunManager" selected="Node.js.app.js">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -188,9 +180,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in heroes" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/peticiones/heroes.http">
-      <method v="2" />
-    </configuration>
     <configuration name="All in heroes.docker" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/peticiones/heroes.docker.http">
       <method v="2" />
     </configuration>
@@ -198,6 +187,12 @@
       <method v="2" />
     </configuration>
     <configuration name="app.js" type="NodeJSConfigurationType" path-to-node="node" nameIsGenerated="true" path-to-js-file="src/app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="heroe.route.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/routes/heroe.route.js" working-dir="$PROJECT_DIR$/src/routes">
+      <method v="2" />
+    </configuration>
+    <configuration name="pdf.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/routes/pdf.js" working-dir="$PROJECT_DIR$/src/routes">
       <method v="2" />
     </configuration>
     <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/databases/test.js" working-dir="$PROJECT_DIR$/src/databases">
@@ -215,21 +210,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="compose.yaml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.pdf.js" />
+        <item itemvalue="Node.js.heroe.route.js" />
         <item itemvalue="Node.js.test.js" />
         <item itemvalue="HTTP Request.heroes.docker | heroes post" />
         <item itemvalue="HTTP Request.All in heroes.docker" />
-        <item itemvalue="Docker.compose.yaml: Compose Deployment" />
-        <item itemvalue="HTTP Request.All in heroes" />
       </list>
     </recent_temporary>
   </component>
@@ -258,7 +245,7 @@
       <workItem from="1758159811146" duration="9451000" />
       <workItem from="1758207369264" duration="5765000" />
       <workItem from="1758215503049" duration="1986000" />
-      <workItem from="1758248214895" duration="1896000" />
+      <workItem from="1758248214895" duration="3840000" />
     </task>
     <servers />
   </component>
@@ -281,7 +268,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/server.js</url>
-          <line>37</line>
+          <line>38</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
