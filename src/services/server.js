@@ -13,6 +13,7 @@ class Server {
             prueba: '/api/prueba',
             heroe: '/api/heroes',
             multimedia: '/api/multimedias',
+            pdf: '/api/pdf',
         }
 
         this.app.get('/', function (req, res) {
@@ -60,6 +61,7 @@ class Server {
         ///this.app.use(this.pathsMySql.auth, require('../routes/MySqlAuth'));
         ///this.app.use(this.pathsMySql.prueba, require('../routes/prueba'));
         this.app.use(this.pathsMySql.heroe, require('../routes/heroe.route'));
+        //this.app.use(this.pathsMySql.pdf, require('../routes/pdf'));
     }
 
     middlewares() {

@@ -98,9 +98,59 @@ const heroePost = async (req, res = response) => {
     }
 }
 
+///
+
+// Upload single (avatar)
+heroeUploadAvatar = (req, res) => {
+    const id = req.params.id;
+    try {
+        if (!req.file) return res.status(400).json({ ok: false, message: 'No se recibió archivo.' });
+
+        // ejemplo: ruta del archivo en servidor
+        const fileInfo = {
+            originalname: req.file.originalname,
+            filename: req.file.filename,
+            mimetype: req.file.mimetype,
+            size: req.file.size,
+            path: req.file.path
+        };
+
+        // TODO: actualizar en DB el registro del héroe con fileInfo.filename/path, etc.
+
+        return res.json({ ok: true, message: 'Avatar subido correctamente', id, file: fileInfo });
+    } catch (err) {
+        return res.status(500).json({ ok: false, message: err.message });
+    }
+};
+
+// Upload multiple files
+heroeUploadFiles = (req, res) => {
+    const id = req.params.id;
+    try {
+        if (!req.files || req.files.length === 0) {
+            return res.status(400).json({ ok: false, message: 'No se recibieron archivos.' });
+        }
+
+        const files = req.files.map(f => ({
+            originalname: f.originalname,
+            filename: f.filename,
+            mimetype: f.mimetype,
+            size: f.size,
+            path: f.path
+        }));
+
+        // TODO: guardar metadata en DB si hace falta
+
+        return res.json({ ok: true, message: `${files.length} archivos subidos`, id, files });
+    } catch (err) {
+        return res.status(500).json({ ok: false, message: err.message });
+    }
+};
 module.exports = {
     heroeGet,
     heroeIdGet,
     heroeComoGet,
-    heroePost
+    heroePost,
+    heroeUploadAvatar,
+    heroeUploadFiles
 }
