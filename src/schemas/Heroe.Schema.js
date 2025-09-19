@@ -1,17 +1,8 @@
 const {DataTypes, Model } =  require("sequelize");
 
 class HeroeSchema extends Model {
-    /** Aquí defines relaciones con otros modelos */
-    /**
-     static associate(models) {
-     // Un usuario puede tener múltiples tokens
-     User.hasMany(models.Token, {
-     as:         'tokens',
-     foreignKey: 'userId',
-     onDelete:   'CASCADE',
-     })
-     }**/
 }
+
 function defineHeroe(sequelize) {
 
     HeroeSchema.init(

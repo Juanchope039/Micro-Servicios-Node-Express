@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="157e680b-94b2-4634-b4d9-381130af0fa5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/ .dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/ .dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticiones/heroes.http" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/heroes.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/heroe.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/heroe.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ConnectionLocal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/HeroeLocal.Mysql.database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ConnectionNube.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/HeroeNube.Mysql.repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/Heroe.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/Heroe.Schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/databases/HeroeLocal.Mysql.database.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/Local.Mysql.database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/databases/HeroeNube.Mysql.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/Nube.Mysql.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/controllers.errors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/Heroe.Schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/Heroe.Schema.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +39,7 @@
   <component name="HttpClientSelectedEnvironments">
     <file url="jar://$APPLICATION_PLUGINS_DIR$/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
     <file url="jar://$APPLICATION_PLUGINS_DIR$/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
+    <file url="jar://$APPLICATION_PLUGINS_DIR$/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-include.http" environment="test" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -57,7 +61,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Docker.Dockerfile.executor": "Run",
+    "Docker.compose.yaml.backend0: Compose Deployment.executor": "Run",
+    "Docker.compose.yaml.backend1: Compose Deployment.executor": "Run",
+    "Docker.compose.yaml.backend2: Compose Deployment.executor": "Run",
+    "Docker.compose.yaml.backend: Compose Deployment.executor": "Run",
+    "Docker.compose.yaml.dasededatos0: Compose Deployment.executor": "Run",
+    "Docker.compose.yaml.dasededatos: Compose Deployment.executor": "Run",
+    "Docker.compose.yaml.database: Compose Deployment.executor": "Run",
+    "Docker.compose.yaml.db3: Compose Deployment.executor": "Run",
+    "Docker.compose.yaml.db: Compose Deployment.executor": "Run",
+    "Docker.compose.yaml: Compose Deployment.executor": "Run",
     "HTTP Request.All in auth.executor": "Run",
+    "HTTP Request.All in heroes.docker.executor": "Run",
     "HTTP Request.All in heroes.executor": "Run",
     "HTTP Request.All in multimedias.executor": "Run",
     "HTTP Request.All in prueba.executor": "Run",
@@ -72,6 +88,7 @@
     "HTTP Request.heroes | heroes post.executor": "Run",
     "HTTP Request.heroes | heroes.executor": "Run",
     "HTTP Request.heroes | root.executor": "Run",
+    "HTTP Request.heroes.docker | heroes post.executor": "Run",
     "HTTP Request.root | #1.executor": "Run",
     "HTTP Request.root | #5.executor": "Run",
     "HTTP Request.root | #6.executor": "Run",
@@ -81,6 +98,7 @@
     "HTTP Request.root | multimedias.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Node.js.app.js.executor": "Run",
+    "Node.js.test.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -90,7 +108,7 @@
     "javascript.nodejs.core.library.typings.version": "22.18.3",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "U:/projects/UAO/DesarolloWeb/Micro Servicios Node Express/src/repositories/mysql",
+    "last_opened_file_path": "C:/SSD Virtual/Development/projects/UAO/DesarolloWeb/Micro Servicios Node Express/peticiones",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,10 +128,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\SSD Virtual\Development\projects\UAO\DesarolloWeb\Micro Servicios Node Express\peticiones" />
+      <recent name="C:\SSD Virtual\Development\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src\databases" />
       <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src\repositories\mysql" />
       <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\peticione" />
       <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express\src" />
-      <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="U:\projects\UAO\DesarolloWeb\Micro Servicios Node Express" />
@@ -130,17 +149,15 @@
           <value>
             <map>
               <entry key="All in heroes" value="STOPPED" />
-              <entry key="heroes | heroes" value="STOPPED" />
-              <entry key="heroes | heroes -&gt; id" value="STOPPED" />
-              <entry key="heroes | heroes como -&gt; nombre" value="STOPPED" />
-              <entry key="heroes | heroes post" value="STOPPED" />
+              <entry key="All in heroes.docker" value="STOPPED" />
+              <entry key="heroes.docker | heroes post" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.app.js">
+  <component name="RunManager" selected="Node.js.test.js">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -174,27 +191,44 @@
     <configuration name="All in heroes" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/peticiones/heroes.http">
       <method v="2" />
     </configuration>
-    <configuration name="heroes | heroes -&gt; id" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.http" executionIdentifier="heroes -&gt; id" index="7" runType="Run single request">
+    <configuration name="All in heroes.docker" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/peticiones/heroes.docker.http">
       <method v="2" />
     </configuration>
-    <configuration name="heroes | heroes como -&gt; nombre" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.http" executionIdentifier="heroes como -&gt; nombre" index="8" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="heroes | heroes post" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.http" executionIdentifier="heroes post" index="8" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="heroes | heroes" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.http" executionIdentifier="heroes" index="5" runType="Run single request">
+    <configuration name="heroes.docker | heroes post" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones/heroes.docker.http" executionIdentifier="heroes post" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="app.js" type="NodeJSConfigurationType" path-to-node="node" nameIsGenerated="true" path-to-js-file="src/app.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/databases/test.js" working-dir="$PROJECT_DIR$/src/databases">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.heroes | heroes post" />
-        <item itemvalue="HTTP Request.heroes | heroes -&gt; id" />
-        <item itemvalue="HTTP Request.heroes | heroes como -&gt; nombre" />
-        <item itemvalue="HTTP Request.heroes | heroes" />
+        <item itemvalue="Node.js.test.js" />
+        <item itemvalue="HTTP Request.heroes.docker | heroes post" />
+        <item itemvalue="HTTP Request.All in heroes.docker" />
+        <item itemvalue="Docker.compose.yaml: Compose Deployment" />
         <item itemvalue="HTTP Request.All in heroes" />
       </list>
     </recent_temporary>
@@ -219,6 +253,12 @@
       <workItem from="1757911360996" duration="2608000" />
       <workItem from="1757984020026" duration="4253000" />
       <workItem from="1758043141062" duration="8145000" />
+      <workItem from="1758136729318" duration="2000" />
+      <workItem from="1758141353393" duration="9827000" />
+      <workItem from="1758159811146" duration="9451000" />
+      <workItem from="1758207369264" duration="5765000" />
+      <workItem from="1758215503049" duration="1986000" />
+      <workItem from="1758248214895" duration="1896000" />
     </task>
     <servers />
   </component>
@@ -235,5 +275,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/services/server.js</url>
+          <line>37</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

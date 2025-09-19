@@ -15,10 +15,17 @@ const showError = (res, error) => {
 const heroeGet = async (req, res = response) => {
     try {
         const unosHeroe = await HeroeRepository.findAllHeroes();
-        res.json({
-            ok: true,
-            data: unosHeroe
-        });
+        if (unosHeroe) {
+            res.json({
+                ok: true,
+                data: unosHeroe
+            });
+        }else {
+            res.status(204).json({
+                ok: false,
+                data: unosHeroe
+            });
+        }
     } catch (error) {
         showError(res, error);
     }
@@ -48,9 +55,17 @@ const heroeComoGet = async (req = request, res = response) => {
     const { termino } = req.params;
     try {
         const [results, metadata] = await HeroeRepository.findAllHeroesByLikeName(termino);
-        res.json({ok:true,
-            data: results,
-        });
+        if (results) {
+            res.json({
+                ok: true,
+                data: results,
+            });
+        }else {
+            res.status(404).json({
+                ok: false,
+                data: results,
+            });
+        }
     } catch (error) {
         showError(res, error);
     }
@@ -71,8 +86,7 @@ const heroePost = async (req, res = response) => {
             })
         }else{
             newHeroe = await HeroeRepository.createNewHeroe(heroeModel)// Guardar en BD
-            //heroeModel.id = newHeroe.null;//Ajusta el Id del nuevo registro al Heroe
-
+            //heroeModel.id = newHeroe.null;//Ajusta el, Id del nuevo registro al Heroe
             res.status(201).json({
                 ok: true,
                 msg: 'Heroe INSERTADO',

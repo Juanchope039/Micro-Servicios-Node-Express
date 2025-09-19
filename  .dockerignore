@@ -6,3 +6,4 @@ peticiones
 npm-debug.log
 Dockerfile
 .dockerignore
+.env

@@ -7,7 +7,9 @@ const connection = new Sequelize(
     process.env.BD_PASS , {
         host: process.env.BD_HOST,
         port:  process.env.BD_PORT,
-        dialect: 'mysql'
+        dialect: 'mariadb',
+        showWarnings: true,
+        connectTimeout: 1000,
     }
 );
 

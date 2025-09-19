@@ -1,13 +1,25 @@
-### STAGE 2: Build ###
-FROM node:22-alpine AS build
-#RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-WORKDIR /home/node/app
+### build ###
+FROM node:22-slim AS build
+
+# add curl for healthcheck
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends curl tini && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/local/app
+
+# have nodemon available for local dev use (file watching)
+RUN npm install -g nodemon
+
 COPY package*.json ./
-USER node
-COPY --chown=node:node . .
-#RUN npm install
-RUN npm install
-#CMD ["node", "src/app.js"]
 
+RUN npm ci && \
+ npm cache clean --force && \
+ mv /usr/local/app/node_modules /node_modules
 
-EXPOSE 8081
+COPY . .
+
+EXPOSE 8080
+
+ENTRYPOINT ["/usr/bin/tini", "--"]
+CMD ["node", "src/app.js"]

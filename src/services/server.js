@@ -1,11 +1,12 @@
 const express = require('express')
 const cors = require('cors')
-const { connection } = require('../databases/HeroeLocal.Mysql.database');
-
+const { connection} = require(process.env.BD_ROUTE);
+const https = require('https');
 class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
+        this.portssh = process.env.PORT_SSH;
 
         this.pathsMySql = {
             auth: '/api/auth',
@@ -21,6 +22,9 @@ class Server {
         //Aquí me conecto a la BD
         this.dbConnection();
 
+        //credenciales
+        this.credentials= this.getCredentials();
+
         //Middlewares
         this.middlewares();
 
@@ -34,13 +38,27 @@ class Server {
             await connection.authenticate();
             console.log('Connection OK a MySQL.');
         } catch (error) {
-            console.error('No se pudo Conectar a la BD MySQL', error);
+            console.error('No se pudo Conectar a la BD MySQL, se  intentará nuevamente en 2s', error);
+            // dejar el error para los logs: error
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            await this.dbConnection();
         }
     }
 
+    getCredentials(){
+        let fs = require('fs');
+        const privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
+        const certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
+
+        return {
+          key: privateKey,
+          cert: certificate
+        };
+    }
+
     routes() {
-        //this.app.use(this.pathsMySql.auth, require('../routes/MySqlAuth'));
-        //this.app.use(this.pathsMySql.prueba, require('../routes/prueba'));
+        ///this.app.use(this.pathsMySql.auth, require('../routes/MySqlAuth'));
+        ///this.app.use(this.pathsMySql.prueba, require('../routes/prueba'));
         this.app.use(this.pathsMySql.heroe, require('../routes/heroe.route'));
     }
 
@@ -70,6 +88,15 @@ class Server {
         await this.app.listen(this.port, () => {
             console.log('Servidor corriendo en puerto', this.port);
         });
+        /*
+        ///let httpsServer = https.createServer(
+        ///    this.credentials,
+        ///    this.app
+        ///);
+
+        ///await httpsServer.listen(this.portssh, () => {
+        ///    console.log('Servidor corriendo en puerto', this.portssh);
+        ///});*/
     }
 }
 

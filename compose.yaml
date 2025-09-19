@@ -1,39 +1,30 @@
 name: appTest
-version: "1.0.1"
+version: '1.2.6'
 services:
-
-  db:
-    image: mariadb
-    restart: always
-    environment:
-      MARIADB_ROOT_PASSWORD: 2711
-      MARIADB_DATABASE: 'desarrollomovil'
-      #BD_PASS
-    ports:
-      - "3300:3306"
-
-  #adminer:
-  #  image: adminer
-  #  restart: always
-  #  ports:
-  #    - 8080:8080
-
-  build:
-    image: backend/app:latest
-    depends_on:
-      - db
+  backend:
     build:
       context: .
-      additional_contexts:
-        - source=https://github.com/Juanchope039/Micro-Servicios-Node-Express.git
-
-    #restart: always
+      dockerfile: Dockerfile
     environment:
-      PORT: 8081
-      BD_DATA_BASE: 'desarrollomovil'
+      PORT_SSH: 8443
+      PORT: 8080
+      BD_DATA_BASE: test
       BD_USER_NAME: root
       BD_PASS: 2711
       BD_PORT: 3306
-      BD_HOST: localhost
+      BD_HOST: database
+      BD_ROUTE: ../databases/Mariadb.database
     ports:
-        - "8080:80"
+      - "80:8080"
+    depends_on:
+      - database
+  database:
+    image: mariadb:latest
+    container_name: basededatos-maridb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 2711
+      MARIADB_PASSWORD: 2711
+      MARIADB_DATABASE: test
+    ports:
+      - "3300:3306"
